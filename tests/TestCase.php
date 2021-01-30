@@ -3,8 +3,8 @@
 namespace Iyngaran\Advertiser\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Orchestra\Testbench\TestCase as Orchestra;
 use Iyngaran\Advertiser\AdvertiserServiceProvider;
+use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
 {
