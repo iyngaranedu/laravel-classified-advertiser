@@ -1,12 +1,12 @@
 <?php
 
-namespace Spatie\Skeleton\Commands;
+namespace Iyngaran\Advertiser\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class AdvertiserCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'laravel-classified-advertiser';
 
     public $description = 'My command';
 
