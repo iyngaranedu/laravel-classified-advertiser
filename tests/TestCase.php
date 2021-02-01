@@ -3,6 +3,7 @@
 namespace Iyngaran\Advertiser\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Iyngaran\Category\CategoryBaseServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
 use Iyngaran\Advertiser\AdvertiserServiceProvider;
 
@@ -21,6 +22,7 @@ class TestCase extends Orchestra
     {
         return [
             AdvertiserServiceProvider::class,
+            CategoryBaseServiceProvider::class
         ];
     }
 
@@ -33,9 +35,11 @@ class TestCase extends Orchestra
             'prefix' => '',
         ]);
 
-        /*
+
         include_once __DIR__.'/../database/migrations/create_laravel_classified_advertiser_table.php.stub';
-        (new \CreatePackageTable())->up();
-        */
+        (new \CreateAdvertiserTable())->up();
+
+        include_once __DIR__.'/../tests/migrations/2014_10_12_000000_create_test_tables.php';
+        (new \CreateTestTable())->up();
     }
 }

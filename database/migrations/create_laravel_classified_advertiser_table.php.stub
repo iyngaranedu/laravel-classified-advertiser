@@ -8,12 +8,31 @@ class CreateAdvertiserTable extends Migration
 {
     public function up()
     {
-        Schema::create('laravel-classified-advertiser_table', function (Blueprint $table) {
+        Schema::create('classified_posts', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('title');
+            $table->string('for', 20)->nullable(true);
+            $table->tinyInteger('condition')->nullable(true);
+            $table->string('short_description')->nullable(true);
+            $table->text('detail_description')->nullable(true);
+            $table->double('price')->nullable(true);
+            $table->string('currency',10)->nullable(true);
+            $table->string('negotiable', 3)->default('No');
+            $table->unsignedBigInteger('category_id')->nullable(true);
+            $table->unsignedBigInteger('sub_category_id')->nullable(true);
+            $table->unsignedBigInteger('belongs_to');
+            $table->unsignedBigInteger('posted_by');
+            $table->dateTime('posted_at')->useCurrent();
+            $table->enum('status',['Published','Drafted','Pending']);
+            $table->enum('review_status',['Reviewed','In Progress','Pending']);
+            $table->unsignedBigInteger('published_by')->nullable(true);
+            $table->dateTime('published_at')->nullable(true);
 
-            // add fields
-
+            $table->softDeletes();
             $table->timestamps();
+
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+            $table->foreign('sub_category_id')->references('id')->on('categories')->onDelete('cascade');
         });
     }
 }

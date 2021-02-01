@@ -16,8 +16,10 @@
     ],
     "require": {
         "php": "^7.4|^8.0",
+        "illuminate/contracts": "^8.0",
+        "iyngaran/laravel-categories": "dev-develop",
         "spatie/laravel-package-tools": "^1.1",
-        "illuminate/contracts": "^8.0"
+        "spatie/data-transfer-object": "^2.8"
     },
     "require-dev": {
         "orchestra/testbench": "^6.0",
@@ -54,5 +56,11 @@
         }
     },
     "minimum-stability": "dev",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "repositories": {
+        "dev-package": {
+            "type": "vcs",
+            "url": "https://github.com/iyngaran/laravel-categories.git"
+        }
+    }
 }
