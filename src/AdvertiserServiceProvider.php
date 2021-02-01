@@ -2,10 +2,10 @@
 
 namespace Iyngaran\Advertiser;
 
+use Iyngaran\Advertiser\Commands\AdvertiserCommand;
 use Illuminate\Support\Facades\Route;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Iyngaran\Advertiser\Commands\AdvertiserCommand;
 
 class AdvertiserServiceProvider extends PackageServiceProvider
 {
