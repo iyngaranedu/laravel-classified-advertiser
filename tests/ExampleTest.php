@@ -20,6 +20,7 @@ class ExampleTest extends TestCase
             'email' => 'Iyngaran55@yahoo.com',
             'password' => 'password!',
         ]));
+        
 
         $category = \Iyngaran\Category\Models\Category::create([
             'name' => ucfirst($this->faker->word),
