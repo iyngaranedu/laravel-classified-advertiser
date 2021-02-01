@@ -3,9 +3,9 @@
 namespace Iyngaran\Advertiser\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Iyngaran\Advertiser\AdvertiserServiceProvider;
 use Iyngaran\Category\CategoryBaseServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Iyngaran\Advertiser\AdvertiserServiceProvider;
 
 class TestCase extends Orchestra
 {
@@ -22,7 +22,7 @@ class TestCase extends Orchestra
     {
         return [
             AdvertiserServiceProvider::class,
-            CategoryBaseServiceProvider::class
+            CategoryBaseServiceProvider::class,
         ];
     }
 

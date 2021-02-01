@@ -3,7 +3,6 @@
 
 namespace Iyngaran\Advertiser\Http\Controllers\Api;
 
-
 use Illuminate\Routing\Controller;
 use Iyngaran\Advertiser\Actions\CreatePostAction;
 use Iyngaran\Advertiser\DTO\PostData;

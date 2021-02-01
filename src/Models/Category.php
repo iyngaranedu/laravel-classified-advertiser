@@ -3,8 +3,8 @@
 
 namespace Iyngaran\Advertiser\Models;
 
-use Iyngaran\Category\Models\Category as CategoryModel;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Iyngaran\Category\Models\Category as CategoryModel;
 
 class Category extends CategoryModel
 {

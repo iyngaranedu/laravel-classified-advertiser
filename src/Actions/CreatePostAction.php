@@ -3,7 +3,6 @@
 
 namespace Iyngaran\Advertiser\Actions;
 
-
 use Iyngaran\Advertiser\DTO\PostData;
 use Iyngaran\Advertiser\Models\Post;
 
@@ -25,6 +24,7 @@ class CreatePostAction
                 $post->subCategory()->associate($data->sub_category)->save();
             }
         }
+
         return $post;
     }
 }

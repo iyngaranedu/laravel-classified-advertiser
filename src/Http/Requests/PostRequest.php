@@ -3,7 +3,6 @@
 
 namespace Iyngaran\Advertiser\Http\Requests;
 
-
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Request;
 
@@ -36,7 +35,7 @@ class PostRequest extends FormRequest
                 'negotiable' => 'nullable',
                 'category' => 'required',
                 'sub_category' => 'required',
-                'status' => 'required'
+                'status' => 'required',
             ],
             config('classified-advertiser.post_fields_validation_rules')
         );

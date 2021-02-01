@@ -3,7 +3,6 @@
 
 namespace Iyngaran\Advertiser\DTO;
 
-
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\App;
@@ -13,7 +12,6 @@ use Spatie\DataTransferObject\DataTransferObject;
 
 class PostData extends DataTransferObject
 {
-
     public string $title;
 
     public ?string $for;
@@ -48,7 +46,6 @@ class PostData extends DataTransferObject
 
     public ?Carbon $published_at;
 
-
     public static function formRequest(FormRequest $request): self
     {
         $category = null;
@@ -81,8 +78,7 @@ class PostData extends DataTransferObject
             'posted_by' => $request->input('posted_by'),
             'posted_at' => Carbon::now(),
             'status' => $request->input('status'),
-            'review_status' => config('classified-advertiser.review_status')
+            'review_status' => config('classified-advertiser.review_status'),
         ]);
     }
-
 }

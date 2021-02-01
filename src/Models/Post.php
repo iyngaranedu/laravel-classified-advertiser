@@ -3,8 +3,6 @@
 
 namespace Iyngaran\Advertiser\Models;
 
-
-
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
@@ -42,6 +40,7 @@ class Post extends Model
     {
         $this->status = 'Published';
         $this->save();
+
         return $this;
     }
 
@@ -49,6 +48,7 @@ class Post extends Model
     {
         $this->status = 'Drafted';
         $this->save();
+
         return $this;
     }
 
@@ -56,7 +56,7 @@ class Post extends Model
     {
         $this->status = 'Pending';
         $this->save();
+
         return $this;
     }
-
 }
