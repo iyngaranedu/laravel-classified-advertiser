@@ -30,8 +30,7 @@ class AdvertiserServiceProvider extends PackageServiceProvider
         Route::group(
             [
                 'prefix' => "/",
-                'middleware' => "web",
-                'namespace' => 'Iyngaran\Advertiser\Http\Controllers',
+                'middleware' => "web"
             ],
             function () {
                 $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
@@ -44,8 +43,7 @@ class AdvertiserServiceProvider extends PackageServiceProvider
         Route::group(
             [
                 'prefix' => "/api/",
-                'middleware' => "api",
-                'namespace' => 'Iyngaran\Advertiser\Http\Controllers\Api',
+                'middleware' => "api"
             ],
             function () {
                 $this->loadRoutesFrom(__DIR__.'/../routes/api.php');

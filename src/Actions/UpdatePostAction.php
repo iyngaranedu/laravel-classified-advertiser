@@ -24,7 +24,6 @@ class UpdatePostAction
                 $post->subCategory()->associate($data->sub_category)->save();
             }
         }
-
         return $post;
     }
 }

@@ -6,6 +6,7 @@ namespace Iyngaran\Advertiser\Tests\Http\Controllers\Api;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
+use Iyngaran\Advertiser\Models\Post;
 use Iyngaran\Advertiser\Tests\Models\User;
 use Iyngaran\Advertiser\Tests\TestCase;
 use Iyngaran\Category\Models\Category;
@@ -60,7 +61,7 @@ class PostControllerTest extends TestCase
         ]));
 
         $response = $this->post(
-            'api/post/store',
+            'api/post',
             $this->mockPostData()
         );
         $response->assertStatus(201);
@@ -75,8 +76,10 @@ class PostControllerTest extends TestCase
             'password' => 'password!',
         ]));
 
-        $response = $this->post(
-            'api/post/store',
+        $post = Post::factory()->create();
+
+        $response = $this->put(
+            'api/post/'.$post->id,
             $this->mockPostData()
         );
         $response->assertStatus(200);
