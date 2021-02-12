@@ -3,16 +3,22 @@
 
 namespace Iyngaran\Advertiser\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Post extends Model
 {
+    use HasFactory;
+
     protected $table = 'classified_posts';
     protected $guarded = [];
 
     const CONDITION_USED = 1;
     const CONDITION_NEW = 2;
+
+    const FOR_RENT = 'for-rent';
+    const FOR_SALE = 'for-sale';
     /**
      * @var mixed|string
      */

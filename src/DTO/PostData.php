@@ -62,7 +62,7 @@ class PostData extends DataTransferObject
                 $request->input('sub_category')
             );
         }
-
+        
         return new self([
             'title' => $request->input('title'),
             'for' => $request->input('for'),

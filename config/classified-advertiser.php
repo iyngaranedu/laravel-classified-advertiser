@@ -1,8 +1,15 @@
 <?php
 
 return [
+    'url_prefix' => 'classified-post',
     'allow_users_to_post' => true,
-    'review_status' => 'In Progress', // Possible values - 'Reviewed','In Progress','Pending'
+    'defaults' => [
+        'per-page' => 5,
+        'order-by' => 'created_at',
+        'order-in' => 'DESC',
+    ],
+    'model' => Iyngaran\Advertiser\Tests\Models\User::class,
+    'review_status' => 'In-Progress', // Possible values - 'Reviewed','In Progress','Pending'
     'post_fields_validation_rules' =>[
        // 'title' => 'required',
         'for' => 'required',

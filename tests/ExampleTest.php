@@ -4,7 +4,8 @@ namespace Iyngaran\Advertiser\Tests;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
-use Illuminate\Support\Facades\Auth;
+use Iyngaran\Advertiser\Models\Category;
+use Iyngaran\Advertiser\Models\Post;
 use Iyngaran\Advertiser\Tests\Models\User;
 
 class ExampleTest extends TestCase
@@ -15,6 +16,20 @@ class ExampleTest extends TestCase
     /** @test */
     public function true_is_true()
     {
+
+        /*
+        $category = Category::factory()
+            ->child()
+            ->create();
+
+
+        $post = Post::factory()
+            ->published()
+            ->reviewed()
+            ->create();
+        dd($post);
+        */
+
         auth()->login(User::create([
             'name' => 'Iyngaran',
             'email' => 'Iyngaran55@yahoo.com',

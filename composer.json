@@ -31,7 +31,8 @@
         "psr-4": {
             "Iyngaran\\Advertiser\\": "src",
             "Iyngaran\\Advertiser\\Database\\Factories\\": "database/factories"
-        }
+        },
+        "files": ["src/Helpers/helpers.php"]
     },
     "autoload-dev": {
         "psr-4": {
