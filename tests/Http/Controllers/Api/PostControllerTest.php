@@ -65,4 +65,20 @@ class PostControllerTest extends TestCase
         );
         $response->assertStatus(201);
     }
+
+    /** @test */
+    public function a_post_can_be_updated()
+    {
+        auth()->login(User::create([
+            'name' => 'Iyngaran',
+            'email' => 'Iyngaran55@yahoo.com',
+            'password' => 'password!',
+        ]));
+
+        $response = $this->post(
+            'api/post/store',
+            $this->mockPostData()
+        );
+        $response->assertStatus(200);
+    }
 }

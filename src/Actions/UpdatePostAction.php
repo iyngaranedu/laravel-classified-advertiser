@@ -6,11 +6,11 @@ namespace Iyngaran\Advertiser\Actions;
 use Iyngaran\Advertiser\DTO\PostData;
 use Iyngaran\Advertiser\Models\Post;
 
-class CreatePostAction
+class UpdatePostAction
 {
-    public function execute(PostData $data): Post
+    public function execute(PostData $data, $post): Post
     {
-        $post = Post::create(
+        $post->update(
             $data->except('category', 'sub_category')
                 ->toArray()
         );

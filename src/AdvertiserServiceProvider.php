@@ -4,6 +4,8 @@ namespace Iyngaran\Advertiser;
 
 use Illuminate\Support\Facades\Route;
 use Iyngaran\Advertiser\Commands\AdvertiserCommand;
+use Iyngaran\Advertiser\Repositories\PostRepository;
+use Iyngaran\Advertiser\Repositories\PostRepositoryInterface;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
@@ -18,6 +20,7 @@ class AdvertiserServiceProvider extends PackageServiceProvider
             ->hasMigration('create_laravel_classified_advertiser_table')
             ->hasCommand(AdvertiserCommand::class);
 
+        $this->registerRepositories();
         $this->registerWebRoutes();
         $this->registerApiRoutes();
     }
@@ -48,5 +51,10 @@ class AdvertiserServiceProvider extends PackageServiceProvider
                 $this->loadRoutesFrom(__DIR__.'/../routes/api.php');
             }
         );
+    }
+
+    private function registerRepositories()
+    {
+        $this->app->bind(PostRepositoryInterface::class, PostRepository::class);
     }
 }
