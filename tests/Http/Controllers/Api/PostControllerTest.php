@@ -51,6 +51,23 @@ class PostControllerTest extends TestCase
     }
 
     /** @test */
+    public function posts_can_be_retrieve()
+    {
+        Post::factory()->count(35)->create();
+
+        $response = $this->get('api/post?page=2&order-by=title&order-in=ASC');
+        $response->assertStatus(200);
+    }
+
+    /** @test */
+    public function a_post_can_be_retrieve()
+    {
+        $post = Post::factory()->create();
+        $response = $this->get('api/post/'.$post->id);
+        $response->assertStatus(200);
+    }
+
+    /** @test */
     public function a_post_can_be_created()
     {
         auth()->login(User::create([
