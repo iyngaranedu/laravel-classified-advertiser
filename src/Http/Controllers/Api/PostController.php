@@ -3,6 +3,7 @@
 
 namespace Iyngaran\Advertiser\Http\Controllers\Api;
 
+use Illuminate\Http\JsonResponse;
 use Illuminate\Routing\Controller;
 use Iyngaran\Advertiser\Actions\CreatePostAction;
 use Iyngaran\Advertiser\Actions\DeletePostAction;
@@ -12,7 +13,6 @@ use Iyngaran\Advertiser\Http\Requests\PostDestroyRequest;
 use Iyngaran\Advertiser\Http\Requests\PostIndexRequest;
 use Iyngaran\Advertiser\Http\Requests\PostShowRequest;
 use Iyngaran\Advertiser\Http\Requests\PostStoreRequest;
-use Illuminate\Http\JsonResponse;
 use Iyngaran\Advertiser\Http\Requests\PostUpdateRequest;
 use Iyngaran\Advertiser\Http\Resources\Post;
 use Iyngaran\Advertiser\Http\Resources\PostCollection;

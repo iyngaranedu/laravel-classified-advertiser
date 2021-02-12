@@ -4,7 +4,6 @@
 namespace Iyngaran\Advertiser\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Http\Request;
 
 class PostDestroyRequest extends FormRequest
 {
