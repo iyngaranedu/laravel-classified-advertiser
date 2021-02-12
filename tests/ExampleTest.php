@@ -16,7 +16,6 @@ class ExampleTest extends TestCase
     /** @test */
     public function true_is_true()
     {
-
         $category = Category::factory()
             ->child()
             ->create();
