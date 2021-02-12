@@ -3,7 +3,6 @@
 
 namespace Iyngaran\Advertiser\Tests\Http\Controllers\Api;
 
-
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Iyngaran\Advertiser\Tests\Models\User;
