@@ -3,7 +3,6 @@
 
 namespace Iyngaran\Advertiser\Http\Resources;
 
-
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class Post extends JsonResource
@@ -30,8 +29,8 @@ class Post extends JsonResource
                 'published_by' => $this->published_by,
                 'published_at' => $this->published_at,
                 'review_status' => $this->review_status,
-                'reviewed_by' => $this->reviewed_by
-            ]
+                'reviewed_by' => $this->reviewed_by,
+            ],
         ];
     }
 }
