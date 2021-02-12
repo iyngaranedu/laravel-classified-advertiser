@@ -16,14 +16,15 @@ class UpdatePostAction
         );
 
         if ($post) {
-            if (!empty($data->category)) {
+            if (! empty($data->category)) {
                 $post->category()->associate($data->category)->save();
             }
 
-            if (!empty($data->sub_category)) {
+            if (! empty($data->sub_category)) {
                 $post->subCategory()->associate($data->sub_category)->save();
             }
         }
+
         return $post;
     }
 }

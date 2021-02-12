@@ -3,12 +3,12 @@
 
 namespace Iyngaran\Advertiser\Http\Controllers\Api;
 
+use Illuminate\Http\JsonResponse;
 use Illuminate\Routing\Controller;
 use Iyngaran\Advertiser\Actions\CreatePostAction;
 use Iyngaran\Advertiser\Actions\UpdatePostAction;
 use Iyngaran\Advertiser\DTO\PostData;
 use Iyngaran\Advertiser\Http\Requests\PostRequest;
-use Illuminate\Http\JsonResponse;
 use Iyngaran\Advertiser\Repositories\PostRepositoryInterface;
 
 class PostController extends Controller
@@ -31,7 +31,7 @@ class PostController extends Controller
         try {
             return response()->json(
                 (new UpdatePostAction())
-                    ->execute(PostData::formRequest($request),$post->find($id)),
+                    ->execute(PostData::formRequest($request), $post->find($id)),
                 200
             );
         } catch (\Exception $ex) {

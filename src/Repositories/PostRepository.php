@@ -3,16 +3,14 @@
 
 namespace Iyngaran\Advertiser\Repositories;
 
-
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Pagination\Paginator;
 use Iyngaran\Advertiser\Exceptions\PostNotFoundException;
 use Iyngaran\Advertiser\Models\Post;
-use Illuminate\Pagination\Paginator;
 
 class PostRepository implements PostRepositoryInterface
 {
-
     public function find(int $id): Post
     {
         if ($post = Post::find($id)) {
