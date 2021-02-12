@@ -6,7 +6,7 @@ namespace Iyngaran\Advertiser\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Request;
 
-class PostRequest extends FormRequest
+class PostStoreRequest extends FormRequest
 {
     public function __construct(Request $request)
     {

@@ -83,4 +83,13 @@ class PostControllerTest extends TestCase
         );
         $response->assertStatus(200);
     }
+
+    /** @test */
+    public function a_post_can_be_deleted()
+    {
+        $post = Post::factory()->create();
+        $response = $this->delete('api/post/'.$post->id);
+        $this->assertEquals(0, Post::all()->count());
+        $response->assertStatus(204);
+    }
 }
