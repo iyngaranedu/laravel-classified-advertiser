@@ -25,7 +25,6 @@ class PostController extends Controller
         return response()->json(new PostCollection($post->all($request)));
     }
 
-
     public function store(PostStoreRequest $request): JsonResponse
     {
         try {
@@ -64,7 +63,8 @@ class PostController extends Controller
             return response()->json(
                 (new DeletePostAction())
                     ->execute($post->find($id)),
-                204);
+                204
+            );
         } catch (\Exception $ex) {
             return response()->json($ex->getMessage(), 500);
         }
