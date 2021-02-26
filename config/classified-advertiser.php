@@ -9,6 +9,7 @@ return [
         'order-in' => 'DESC',
     ],
     'model' => Iyngaran\Advertiser\Tests\Models\User::class,
+    'default_status' => 'Drafted', // Possible values - 'Published','Drafted','Pending'
     'review_status' => 'In-Progress', // Possible values - 'Reviewed','In Progress','Pending'
     'post_fields_validation_rules' =>[
        // 'title' => 'required',

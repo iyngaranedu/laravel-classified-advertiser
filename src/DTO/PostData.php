@@ -77,7 +77,7 @@ class PostData extends DataTransferObject
             'belongs_to' => $request->input('belongs_to'),
             'posted_by' => $request->input('posted_by'),
             'posted_at' => Carbon::now(),
-            'status' => $request->input('status'),
+            'status' => $request->input('status') ?: config('classified-advertiser.default_status'),
             'review_status' => config('classified-advertiser.review_status'),
         ]);
     }

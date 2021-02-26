@@ -35,7 +35,7 @@ class PostStoreRequest extends FormRequest
                 'negotiable' => 'nullable',
                 'category' => 'required',
                 'sub_category' => 'required',
-                'status' => 'required',
+                'status' => 'nullable',
             ],
             config('classified-advertiser.post_fields_validation_rules')
         );
