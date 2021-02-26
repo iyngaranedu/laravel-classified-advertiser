@@ -66,10 +66,10 @@ class PostData extends DataTransferObject
         return new self([
             'title' => $request->input('title'),
             'for' => $request->input('for'),
-            'condition' => $request->input('condition'),
+            'condition' => (int)$request->input('condition'),
             'short_description' => $request->input('short_description'),
             'detail_description' => $request->input('detail_description'),
-            'price' => $request->input('price'),
+            'price' => (double)$request->input('price'),
             'currency' => $request->input('currency'),
             'negotiable' => (int)$request->input('negotiable'),
             'category' => $category,
