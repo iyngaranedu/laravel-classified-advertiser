@@ -29,7 +29,7 @@ class AdvertiserServiceProvider extends PackageServiceProvider
     {
         Route::group(
             [
-                'prefix' => "/",
+                'prefix' => "/".config('classified-advertiser.url_prefix', 'classified-advertiser'),
                 'middleware' => "web",
             ],
             function () {
@@ -42,7 +42,7 @@ class AdvertiserServiceProvider extends PackageServiceProvider
     {
         Route::group(
             [
-                'prefix' => "/api/",
+                'prefix' => "/api/".config('classified-advertiser.url_prefix', 'classified-advertiser'),
                 'middleware' => "api",
             ],
             function () {
