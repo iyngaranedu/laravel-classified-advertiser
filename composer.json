@@ -17,7 +17,7 @@
     "require": {
         "php": "^7.4|^8.0",
         "illuminate/contracts": "^8.0",
-        "iyngaran/laravel-categories": "dev-develop",
+        "iyngaran/laravel-categories": "dev-master",
         "spatie/laravel-package-tools": "^1.1",
         "spatie/data-transfer-object": "^2.8"
     },
