@@ -5,7 +5,6 @@ namespace Iyngaran\Advertiser\DTO;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Carbon;
-use Illuminate\Support\Facades\App;
 use Iyngaran\Category\Models\Category;
 use Spatie\DataTransferObject\DataTransferObject;
 
