@@ -18,6 +18,12 @@ class CreateLaravelClassifiedAdvertiserTable extends Migration
             $table->double('price')->nullable(true);
             $table->string('currency',10)->nullable(true);
             $table->string('negotiable', 3)->default('No');
+            $table->string('address')->nullable(true);
+            $table->string('city')->nullable(true);
+            $table->string('state')->nullable(true);
+            $table->string('country')->nullable(true);
+            $table->json('geo_location')->nullable(true);
+            $table->json('contact_numbers')->nullable(true);
             $table->unsignedBigInteger('category_id')->nullable(true);
             $table->unsignedBigInteger('sub_category_id')->nullable(true);
             $table->unsignedBigInteger('belongs_to');
@@ -28,13 +34,14 @@ class CreateLaravelClassifiedAdvertiserTable extends Migration
             $table->dateTime('published_at')->nullable(true);
             $table->enum('review_status',['Reviewed','In-Progress','Pending']);
             $table->unsignedBigInteger('reviewed_by')->nullable(true);
-
-
             $table->softDeletes();
             $table->timestamps();
 
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
             $table->foreign('sub_category_id')->references('id')->on('categories')->onDelete('cascade');
+            $table->foreign('belongs_to')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('posted_by')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('reviewed_by')->references('id')->on('users')->onDelete('cascade');
         });
     }
 }

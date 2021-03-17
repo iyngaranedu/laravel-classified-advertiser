@@ -7,7 +7,6 @@ use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\App;
 use Iyngaran\Category\Models\Category;
-use Iyngaran\Category\Repositories\CategoryRepositoryInterface;
 use Spatie\DataTransferObject\DataTransferObject;
 
 class PostData extends DataTransferObject
@@ -27,6 +26,18 @@ class PostData extends DataTransferObject
     public ?string $currency;
 
     public ?int $negotiable;
+
+    public ?string $address;
+
+    public ?string $city;
+
+    public ?string $state;
+
+    public ?string $country;
+
+    public ?array $geo_location;
+
+    public ?array $contact_numbers;
 
     public Category $category;
 
@@ -52,15 +63,11 @@ class PostData extends DataTransferObject
         $subCategory = null;
 
         if ($request->input('category')) {
-            $category = App::make(CategoryRepositoryInterface::class)->find(
-                $request->input('category')
-            );
+            $category = Category::find($request->input('category'));
         }
 
         if ($request->input('sub_category')) {
-            $subCategory = App::make(CategoryRepositoryInterface::class)->find(
-                $request->input('sub_category')
-            );
+            $subCategory = Category::find($request->input('sub_category'));
         }
 
         return new self([
@@ -73,6 +80,12 @@ class PostData extends DataTransferObject
             'currency' => $request->input('currency'),
             'negotiable' => (int)$request->input('negotiable'),
             'category' => $category,
+            'address' => $request->input('address'),
+            'city' => $request->input('city'),
+            'state' => $request->input('state'),
+            'country' => $request->input('country'),
+            'geo_location' => $request->input('geo_location'),
+            'contact_numbers' => $request->input('contact_numbers'),
             'sub_category' => $subCategory,
             'belongs_to' => $request->input('belongs_to'),
             'posted_by' => $request->input('posted_by'),

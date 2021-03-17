@@ -4,7 +4,7 @@ namespace Iyngaran\Advertiser\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Iyngaran\Advertiser\AdvertiserServiceProvider;
-use Iyngaran\Category\CategoryBaseServiceProvider;
+use Iyngaran\Category\CategoryServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
@@ -22,7 +22,7 @@ class TestCase extends Orchestra
     {
         return [
             AdvertiserServiceProvider::class,
-            CategoryBaseServiceProvider::class,
+            CategoryServiceProvider::class
         ];
     }
 
@@ -35,6 +35,9 @@ class TestCase extends Orchestra
             'prefix' => '',
         ]);
 
+
+        include_once __DIR__.'/../vendor/iyngaran/laravel-categories/database/migrations/create_laravel_categories_table.php.stub';
+        (new \CreateLaravelCategoriesTable())->up();
 
         include_once __DIR__.'/../database/migrations/create_laravel_classified_advertiser_table.php.stub';
         (new \CreateLaravelClassifiedAdvertiserTable())->up();

@@ -37,13 +37,27 @@ class PostControllerTest extends TestCase
 
         return [
             'title' => $this->faker->text(150),
-            'for' => 'sale',
-            'condition' => 1,
-            'short_description' => null,
-            'detail_description' => null,
+            'for' => $this->faker->randomElement(['sale','rent']),
+            'condition' => $this->faker->randomElement([1,2]),
+            'short_description' => $this->faker->paragraph,
+            'detail_description' => $this->faker->paragraph(5),
             'price' => $this->faker->randomFloat(2),
             'currency' => $this->faker->currencyCode,
-            'negotiable' => 1,
+            'negotiable' => $this->faker->randomElement([0,1]),
+            'address' => $this->faker->streetAddress,
+            'city' => $this->faker->city,
+            'state' => $this->faker->state,
+            'country' => $this->faker->country,
+            'geo_location' => [
+                'lat' => $this->faker->randomFloat(5),
+                'lon' => $this->faker->randomFloat(5),
+            ],
+
+            'contact_numbers' => [
+                'number_1' => $this->faker->randomFloat(5),
+                'number_2' => $this->faker->randomFloat(5),
+            ],
+
             'category' => $category->id,
             'sub_category' => $sub_category->id,
             'status' => 'Published',
@@ -53,6 +67,7 @@ class PostControllerTest extends TestCase
     /** @test */
     public function posts_can_be_retrieve()
     {
+        $this->withoutExceptionHandling();
         Post::factory()->count(35)->create();
 
         $response = $this->get('api/classified-advertiser/post?page=2&order-by=title&order-in=ASC');

@@ -6,6 +6,7 @@ namespace Iyngaran\Advertiser\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Iyngaran\Advertiser\Casts\Json;
 
 class Post extends Model
 {
@@ -23,6 +24,11 @@ class Post extends Model
      * @var mixed|string
      */
     private $status;
+
+    protected $casts = [
+        'geo_location' => Json::class,
+        'contact_numbers' => Json::class,
+    ];
 
     public function category(): BelongsTo
     {
