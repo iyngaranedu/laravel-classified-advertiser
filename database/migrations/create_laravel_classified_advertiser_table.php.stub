@@ -34,6 +34,7 @@ class CreateLaravelClassifiedAdvertiserTable extends Migration
             $table->dateTime('published_at')->nullable(true);
             $table->enum('review_status',['Reviewed','In-Progress','Pending']);
             $table->unsignedBigInteger('reviewed_by')->nullable(true);
+            $table->dateTime('reviewed_at')->nullable(true);
             $table->softDeletes();
             $table->timestamps();
 
