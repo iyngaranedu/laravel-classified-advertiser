@@ -46,6 +46,7 @@ class CreateLaravelClassifiedAdvertiserTable extends Migration
         });
     }
 
+
     public function down()
     {
           Schema::dropIfExists('classified_posts');
