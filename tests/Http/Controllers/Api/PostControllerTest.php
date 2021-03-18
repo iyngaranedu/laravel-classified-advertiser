@@ -71,6 +71,7 @@ class PostControllerTest extends TestCase
         Post::factory()->count(35)->create();
 
         $response = $this->get('api/classified-advertiser/post?page=2&order-by=title&order-in=ASC&belongs-to=5');
+        dd($response);
         $response->assertStatus(200);
     }
 
