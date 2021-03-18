@@ -62,6 +62,7 @@ class AdvertiserServiceProvider extends PackageServiceProvider
     {
         parent::boot();
         Post::observe(PostObserver::class);
+
         return $this;
     }
 }
