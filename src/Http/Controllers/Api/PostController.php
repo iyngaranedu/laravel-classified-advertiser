@@ -15,6 +15,7 @@ use Iyngaran\Advertiser\Http\Requests\PostShowRequest;
 use Iyngaran\Advertiser\Http\Requests\PostStoreRequest;
 use Iyngaran\Advertiser\Http\Requests\PostUpdateRequest;
 use Iyngaran\Advertiser\Http\Resources\Post;
+use Iyngaran\Advertiser\Http\Resources\PostCollection;
 use Iyngaran\Advertiser\Repositories\PostRepositoryInterface;
 
 class PostController extends Controller
