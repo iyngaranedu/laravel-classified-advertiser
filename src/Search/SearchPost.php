@@ -22,15 +22,15 @@ class SearchPost extends Search
         $reqSortBy = $filters->input('sort-by');
         $reqSortOrder = $filters->input('order');
 
-        if (!$reqPerPage) {
+        if (! $reqPerPage) {
             $reqPerPage = config('classified-advertiser.defaults.per-page');
         }
 
-        if (!$reqSortBy) {
+        if (! $reqSortBy) {
             $reqSortBy = config('classified-advertiser.defaults.order-by');
         }
 
-        if (!$reqSortOrder) {
+        if (! $reqSortOrder) {
             $reqSortOrder = config('classified-advertiser.defaults.order-in');
         }
 
