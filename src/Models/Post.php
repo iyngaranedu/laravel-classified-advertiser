@@ -13,6 +13,16 @@ class Post extends Model
     use HasFactory;
 
     protected $table = 'classified_posts';
+
+    protected $dates = [
+        'posted_at',
+        'published_at',
+        'reviewed_at',
+        'deleted_at',
+        'created_at',
+        'updated_at'
+    ];
+
     protected $guarded = [];
 
     const CONDITION_USED = 1;
