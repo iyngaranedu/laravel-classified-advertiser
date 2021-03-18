@@ -20,7 +20,7 @@ class Post extends Model
         'reviewed_at',
         'deleted_at',
         'created_at',
-        'updated_at'
+        'updated_at',
     ];
 
     protected $guarded = [];
