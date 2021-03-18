@@ -15,14 +15,14 @@ use Iyngaran\Advertiser\Http\Requests\PostShowRequest;
 use Iyngaran\Advertiser\Http\Requests\PostStoreRequest;
 use Iyngaran\Advertiser\Http\Requests\PostUpdateRequest;
 use Iyngaran\Advertiser\Http\Resources\Post;
-use Iyngaran\Advertiser\Http\Resources\PostCollection;
 use Iyngaran\Advertiser\Repositories\PostRepositoryInterface;
+use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
 class PostController extends Controller
 {
-    public function index(PostIndexRequest $request, PostRepositoryInterface $post): JsonResponse
+    public function index(PostIndexRequest $request, PostRepositoryInterface $post): AnonymousResourceCollection
     {
-        return response()->json(Post::collection($post->search($request)));
+        return Post::collection($post->search($request));
     }
 
     public function store(PostStoreRequest $request): JsonResponse
