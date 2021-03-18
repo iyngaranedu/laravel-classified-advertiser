@@ -22,7 +22,7 @@ class TestCase extends Orchestra
     {
         return [
             AdvertiserServiceProvider::class,
-            CategoryServiceProvider::class
+            CategoryServiceProvider::class,
         ];
     }
 
