@@ -4,7 +4,7 @@ return [
     'url_prefix' => 'classified-advertiser',
     'allow_users_to_post' => true,
     'defaults' => [
-        'per-page' => 5,
+        'per-page' => 2,
         'order-by' => 'created_at',
         'order-in' => 'DESC',
     ],
