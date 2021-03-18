@@ -124,4 +124,25 @@ class PostControllerTest extends TestCase
         $this->assertEquals(0, Post::all()->count());
         $response->assertStatus(204);
     }
+
+    /** @test */
+    public function a_post_can_be_updated_with_review_status()
+    {
+        $this->withoutExceptionHandling();
+        auth()->login(User::create([
+            'name' => 'Iyngaran',
+            'email' => 'Iyngaran55@yahoo.com',
+            'password' => 'password!',
+        ]));
+
+        $post = Post::factory()->create();
+
+        $postData = $this->mockPostData();
+        $postData['review_status'] = 'Reviewed';
+        $response = $this->put(
+            'api/app/posts/'.$post->id,
+            $postData
+        );
+        $response->assertStatus(200);
+    }
 }

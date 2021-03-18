@@ -4,6 +4,8 @@ namespace Iyngaran\Advertiser;
 
 use Illuminate\Support\Facades\Route;
 use Iyngaran\Advertiser\Commands\AdvertiserCommand;
+use Iyngaran\Advertiser\Models\Post;
+use Iyngaran\Advertiser\Observers\PostObserver;
 use Iyngaran\Advertiser\Repositories\PostRepository;
 use Iyngaran\Advertiser\Repositories\PostRepositoryInterface;
 use Spatie\LaravelPackageTools\Package;
@@ -54,5 +56,12 @@ class AdvertiserServiceProvider extends PackageServiceProvider
     private function registerRepositories()
     {
         $this->app->bind(PostRepositoryInterface::class, PostRepository::class);
+    }
+
+    public function boot(): self
+    {
+        parent::boot();
+        Post::observe(PostObserver::class);
+        return $this;
     }
 }
