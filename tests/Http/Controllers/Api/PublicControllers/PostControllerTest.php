@@ -30,5 +30,4 @@ class PostControllerTest extends TestCase
         $response = $this->get('api/classified-advertiser/public/post/'.$post->id);
         $response->assertStatus(200);
     }
-
 }
