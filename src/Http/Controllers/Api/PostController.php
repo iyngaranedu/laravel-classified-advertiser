@@ -22,7 +22,7 @@ class PostController extends Controller
 {
     public function index(PostIndexRequest $request, PostRepositoryInterface $post): JsonResponse
     {
-        return response()->json(new PostCollection($post->all($request)));
+        return response()->json(new PostCollection($post->search($request)));
     }
 
     public function store(PostStoreRequest $request): JsonResponse
