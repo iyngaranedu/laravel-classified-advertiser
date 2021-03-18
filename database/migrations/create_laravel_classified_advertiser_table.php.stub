@@ -45,4 +45,9 @@ class CreateLaravelClassifiedAdvertiserTable extends Migration
             $table->foreign('reviewed_by')->references('id')->on('users')->onDelete('cascade');
         });
     }
+
+    public function down()
+    {
+          Schema::dropIfExists('classified_posts');
+    }
 }
