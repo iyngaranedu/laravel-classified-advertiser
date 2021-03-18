@@ -23,12 +23,24 @@ class PostFactory extends Factory
             'price' => $this->faker->randomFloat(2),
             'currency' => 'EUR',
             'negotiable' => $this->faker->randomElement([0, 1]),
+            'address' => $this->faker->streetAddress,
+            'city' => $this->faker->city,
+            'state' => $this->faker->state,
+            'country' => $this->faker->country,
+            'geo_location' => [
+                'lat' => $this->faker->randomFloat(2),
+                'lon' => $this->faker->randomFloat(2)
+            ],
+            'contact_numbers' => [
+                $this->faker->phoneNumber,
+                $this->faker->phoneNumber
+            ],
             'category_id' => Category::factory(),
             'sub_category_id' => Category::factory(),
             'belongs_to' => User::factory(),
             'posted_by' => User::factory(),
             'posted_at' => $this->faker->dateTime,
-            'status' => $this->faker->randomElement(['Drafted', 'Pending']),
+            'status' => $this->faker->randomElement(['Drafted','Pending']),
             'review_status' => $this->faker->randomElement(['In-Progress', 'Pending'])
         ];
     }

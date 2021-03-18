@@ -54,8 +54,8 @@ class PostControllerTest extends TestCase
             ],
 
             'contact_numbers' => [
-                'number_1' => $this->faker->randomFloat(5),
-                'number_2' => $this->faker->randomFloat(5),
+                $this->faker->randomFloat(5),
+                $this->faker->randomFloat(5),
             ],
 
             'category' => $category->id,

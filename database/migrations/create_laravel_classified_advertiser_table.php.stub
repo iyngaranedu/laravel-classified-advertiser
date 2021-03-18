@@ -17,7 +17,7 @@ class CreateLaravelClassifiedAdvertiserTable extends Migration
             $table->text('detail_description')->nullable(true);
             $table->double('price')->nullable(true);
             $table->string('currency',10)->nullable(true);
-            $table->string('negotiable', 3)->default('No');
+            $table->tinyInteger('negotiable')->default(0);
             $table->string('address')->nullable(true);
             $table->string('city')->nullable(true);
             $table->string('state')->nullable(true);
