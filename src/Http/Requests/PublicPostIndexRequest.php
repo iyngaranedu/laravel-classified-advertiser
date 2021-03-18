@@ -3,7 +3,6 @@
 
 namespace Iyngaran\Advertiser\Http\Requests;
 
-
 use Illuminate\Foundation\Http\FormRequest;
 
 class PublicPostIndexRequest extends FormRequest

@@ -30,5 +30,4 @@ class PostControllerTest extends TestCase
         $response = $this->get('api/app/public/posts/'.$post->id);
         $response->assertStatus(200);
     }
-
 }
