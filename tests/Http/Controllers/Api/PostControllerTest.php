@@ -70,7 +70,7 @@ class PostControllerTest extends TestCase
         $this->withoutExceptionHandling();
         Post::factory()->count(35)->create();
 
-        $response = $this->get('api/classified-advertiser/post?page=2&order-by=title&order-in=ASC');
+        $response = $this->get('api/app/posts?page=2&order-by=title&order-in=ASC');
         $response->assertStatus(200);
     }
 
@@ -78,7 +78,7 @@ class PostControllerTest extends TestCase
     public function a_post_can_be_retrieve()
     {
         $post = Post::factory()->create();
-        $response = $this->get('api/classified-advertiser/post/'.$post->id);
+        $response = $this->get('api/app/posts/'.$post->id);
         $response->assertStatus(200);
     }
 
@@ -92,7 +92,7 @@ class PostControllerTest extends TestCase
         ]));
 
         $response = $this->post(
-            'api/classified-advertiser/post',
+            'api/app/posts',
             $this->mockPostData()
         );
         $response->assertStatus(201);
@@ -110,7 +110,7 @@ class PostControllerTest extends TestCase
         $post = Post::factory()->create();
 
         $response = $this->put(
-            'api/classified-advertiser/post/'.$post->id,
+            'api/app/posts/'.$post->id,
             $this->mockPostData()
         );
         $response->assertStatus(200);
@@ -120,7 +120,7 @@ class PostControllerTest extends TestCase
     public function a_post_can_be_deleted()
     {
         $post = Post::factory()->create();
-        $response = $this->delete('api/classified-advertiser/post/'.$post->id);
+        $response = $this->delete('api/app/posts/'.$post->id);
         $this->assertEquals(0, Post::all()->count());
         $response->assertStatus(204);
     }

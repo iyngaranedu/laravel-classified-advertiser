@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'url_prefix' => 'classified-advertiser',
+    'url_prefix' => 'app',
     'allow_users_to_post' => true,
     'defaults' => [
         'per-page' => 2,

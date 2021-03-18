@@ -8,14 +8,14 @@ use Iyngaran\Advertiser\Http\Controllers\Api\PublicControllers\PostController as
 Route::group(
     ['prefix' => 'public', 'as' => 'public.'],
     function () {
-        Route::resource('/post', PublicPostController::class)->only([
+        Route::resource('/posts', PublicPostController::class)->only([
             'index',
             'show'
         ]);
     });
 
 
-Route::resource('/post', PostController::class)->except([
+Route::resource('/posts', PostController::class)->except([
     'create',
     'edit'
 ]);

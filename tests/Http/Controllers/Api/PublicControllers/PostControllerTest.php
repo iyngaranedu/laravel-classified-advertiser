@@ -19,7 +19,7 @@ class PostControllerTest extends TestCase
         $this->withoutExceptionHandling();
         Post::factory()->count(35)->create();
 
-        $response = $this->get('api/classified-advertiser/public/post?page=2&order-by=title&order-in=ASC');
+        $response = $this->get('api/app/public/posts?page=2&order-by=title&order-in=ASC');
         $response->assertStatus(200);
     }
 
@@ -27,7 +27,7 @@ class PostControllerTest extends TestCase
     public function a_post_can_be_retrieve()
     {
         $post = Post::factory()->create();
-        $response = $this->get('api/classified-advertiser/public/post/'.$post->id);
+        $response = $this->get('api/app/public/posts/'.$post->id);
         $response->assertStatus(200);
     }
 
