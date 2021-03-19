@@ -15,6 +15,7 @@ class AttachImagesAction
             }
         }
         $model->images()->createMany($image);
+
         return $model;
     }
 }
