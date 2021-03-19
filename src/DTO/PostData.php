@@ -52,7 +52,7 @@ class PostData extends DataTransferObject
 
     public string $review_status;
 
-    public ?string $default_image;
+    public ?array $default_image;
 
     public ?array $images;
 

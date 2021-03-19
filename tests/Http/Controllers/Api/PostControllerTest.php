@@ -38,13 +38,13 @@ class PostControllerTest extends TestCase
 
         return [
             'title' => $this->faker->text(150),
-            'for' => $this->faker->randomElement(['sale','rent']),
-            'condition' => $this->faker->randomElement([1,2]),
+            'for' => $this->faker->randomElement(['sale', 'rent']),
+            'condition' => $this->faker->randomElement([1, 2]),
             'short_description' => $this->faker->paragraph,
             'detail_description' => $this->faker->paragraph(5),
             'price' => $this->faker->randomFloat(2),
             'currency' => $this->faker->currencyCode,
-            'negotiable' => $this->faker->randomElement([0,1]),
+            'negotiable' => $this->faker->randomElement([0, 1]),
             'address' => $this->faker->streetAddress,
             'city' => $this->faker->city,
             'state' => $this->faker->state,
@@ -61,7 +61,9 @@ class PostControllerTest extends TestCase
 
             'category' => $category->id,
             'sub_category' => $sub_category->id,
-            'default_image' => Str::slug($this->faker->word).".png",
+            'default_image' => [
+                'url' => Str::slug($this->faker->word).".png"
+            ],
             'images' => [
                 [
                     'url' => Str::slug($this->faker->word).".png",
