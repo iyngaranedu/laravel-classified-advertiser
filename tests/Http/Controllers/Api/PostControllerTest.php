@@ -5,6 +5,7 @@ namespace Iyngaran\Advertiser\Tests\Http\Controllers\Api;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
+use Illuminate\Support\Str;
 use Iyngaran\Advertiser\Models\Post;
 use Iyngaran\Advertiser\Tests\Models\User;
 use Iyngaran\Advertiser\Tests\TestCase;
@@ -60,6 +61,21 @@ class PostControllerTest extends TestCase
 
             'category' => $category->id,
             'sub_category' => $sub_category->id,
+            'default_image' => Str::slug($this->faker->word).".png",
+            'images' => [
+                [
+                    'url' => Str::slug($this->faker->word).".png",
+                    'display_order' => 1
+                ],
+                [
+                    'url' => Str::slug($this->faker->word).".png",
+                    'display_order' => 2
+                ],
+                [
+                    'url' => Str::slug($this->faker->word).".png",
+                    'display_order' => 3
+                ],
+            ],
             'status' => 'Published',
         ];
     }
@@ -85,6 +101,7 @@ class PostControllerTest extends TestCase
     /** @test */
     public function a_post_can_be_created()
     {
+        $this->withoutExceptionHandling();
         auth()->login(User::create([
             'name' => 'Iyngaran',
             'email' => 'Iyngaran55@yahoo.com',
@@ -101,6 +118,7 @@ class PostControllerTest extends TestCase
     /** @test */
     public function a_post_can_be_updated()
     {
+        $this->withoutExceptionHandling();
         auth()->login(User::create([
             'name' => 'Iyngaran',
             'email' => 'Iyngaran55@yahoo.com',
@@ -119,6 +137,7 @@ class PostControllerTest extends TestCase
     /** @test */
     public function a_post_can_be_deleted()
     {
+        $this->withoutExceptionHandling();
         $post = Post::factory()->create();
         $response = $this->delete('api/app/posts/'.$post->id);
         $this->assertEquals(0, Post::all()->count());

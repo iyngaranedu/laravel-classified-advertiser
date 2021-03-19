@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Iyngaran\Advertiser\Casts\Json;
+use Illuminate\Database\Eloquent\Relations\MorphMany;
+use Illuminate\Database\Eloquent\Relations\MorphOne;
 
 class Post extends Model
 {
@@ -80,5 +82,15 @@ class Post extends Model
         $this->save();
 
         return $this;
+    }
+
+    public function defaultImage(): MorphOne
+    {
+        return $this->morphOne(Image::class, 'imageable')->where('is_default', 'Yes');
+    }
+
+    public function images(): MorphMany
+    {
+        return $this->morphMany(Image::class, 'imageable');
     }
 }

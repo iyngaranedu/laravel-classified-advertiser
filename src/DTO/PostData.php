@@ -52,6 +52,10 @@ class PostData extends DataTransferObject
 
     public string $review_status;
 
+    public ?string $default_image;
+
+    public ?array $images;
+
     public ?int $published_by;
 
     public ?Carbon $published_at;
@@ -86,6 +90,8 @@ class PostData extends DataTransferObject
             'geo_location' => $request->input('geo_location'),
             'contact_numbers' => $request->input('contact_numbers'),
             'sub_category' => $subCategory,
+            'default_image' => $request->input('default_image'),
+            'images' => $request->input('images'),
             'belongs_to' => $request->input('belongs_to'),
             'posted_by' => $request->input('posted_by'),
             'posted_at' => Carbon::now(),

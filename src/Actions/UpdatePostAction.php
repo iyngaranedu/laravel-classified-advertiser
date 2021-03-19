@@ -11,7 +11,7 @@ class UpdatePostAction
     public function execute(PostData $data, $post): Post
     {
         $post->update(
-            $data->except('category', 'sub_category')
+            $data->except('category', 'sub_category','default_image','images')
                 ->toArray()
         );
 

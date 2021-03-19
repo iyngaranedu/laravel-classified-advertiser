@@ -11,7 +11,7 @@ class CreatePostAction
     public function execute(PostData $data): Post
     {
         $post = Post::create(
-            $data->except('category', 'sub_category')
+            $data->except('category', 'sub_category','default_image','images')
                 ->toArray()
         );
 
