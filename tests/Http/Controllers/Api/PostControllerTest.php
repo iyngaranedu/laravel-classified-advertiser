@@ -62,7 +62,7 @@ class PostControllerTest extends TestCase
             'category' => $category->id,
             'sub_category' => $sub_category->id,
             'default_image' => [
-                'url' => Str::slug($this->faker->word).".png"
+                'url' => Str::slug($this->faker->word).".png",
             ],
             'images' => [
                 [
