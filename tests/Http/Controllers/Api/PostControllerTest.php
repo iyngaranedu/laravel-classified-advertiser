@@ -65,15 +65,15 @@ class PostControllerTest extends TestCase
             'images' => [
                 [
                     'url' => Str::slug($this->faker->word).".png",
-                    'display_order' => 1
+                    'display_order' => 1,
                 ],
                 [
                     'url' => Str::slug($this->faker->word).".png",
-                    'display_order' => 2
+                    'display_order' => 2,
                 ],
                 [
                     'url' => Str::slug($this->faker->word).".png",
-                    'display_order' => 3
+                    'display_order' => 3,
                 ],
             ],
             'status' => 'Published',
