@@ -3,7 +3,6 @@
 
 namespace Iyngaran\Advertiser\Http\Controllers\Api;
 
-
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\File;
@@ -22,9 +21,10 @@ class FileUploadController extends Controller
         } catch (\Exception $e) {
             return response(['errors' => ['message' => $e->getMessage()]], 404);
         }
+
         return response()->json([
             'path' => $file_name,
-            'message' => 'Successfully updated event media!'
+            'message' => 'Successfully updated event media!',
         ], 200);
     }
 }
