@@ -20,5 +20,5 @@ Route::resource('/posts', PostController::class)->except([
     'edit'
 ]);
 
-Route::resource('/posts-file-upload', FileUploadController::class);
+Route::post('/posts-file-upload', FileUploadController::class);
 
