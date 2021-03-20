@@ -19,9 +19,9 @@ class CreateLaravelClassifiedAdvertiserTable extends Migration
             $table->string('currency',10)->nullable(true);
             $table->tinyInteger('negotiable')->default(0);
             $table->string('address')->nullable(true);
-            $table->string('city')->nullable(true);
-            $table->string('state')->nullable(true);
-            $table->string('country')->nullable(true);
+            $table->integer('city')->nullable(true);
+            $table->integer('state')->nullable(true);
+            $table->integer('country')->nullable(true);
             $table->json('geo_location')->nullable(true);
             $table->json('contact_numbers')->nullable(true);
             $table->unsignedBigInteger('category_id')->nullable(true);

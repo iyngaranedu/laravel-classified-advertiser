@@ -28,11 +28,11 @@ class PostData extends DataTransferObject
 
     public ?string $address;
 
-    public ?string $city;
+    public ?int $city;
 
-    public ?string $state;
+    public ?int $state;
 
-    public ?string $country;
+    public ?int $country;
 
     public ?array $geo_location;
 
@@ -84,9 +84,9 @@ class PostData extends DataTransferObject
             'negotiable' => (int)$request->input('negotiable'),
             'category' => $category,
             'address' => $request->input('address'),
-            'city' => $request->input('city'),
-            'state' => $request->input('state'),
-            'country' => $request->input('country'),
+            'city' => (int)$request->input('city'),
+            'state' => (int)$request->input('state'),
+            'country' => (int)$request->input('country'),
             'geo_location' => $request->input('geo_location'),
             'contact_numbers' => $request->input('contact_numbers'),
             'sub_category' => $subCategory,

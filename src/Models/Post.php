@@ -27,8 +27,8 @@ class Post extends Model
 
     protected $guarded = [];
 
-    const CONDITION_USED = 1;
-    const CONDITION_NEW = 2;
+    const CONDITION_NEW = 1;
+    const CONDITION_USED = 2;
 
     const FOR_RENT = 'for-rent';
     const FOR_SALE = 'for-sale';
