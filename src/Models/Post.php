@@ -86,11 +86,11 @@ class Post extends Model
 
     public function defaultImage(): MorphOne
     {
-        return $this->morphOne(Image::class, 'imageable')->where('is_default', 'Yes');
+        return $this->morphOne(Image::class, 'imageable')->where('is_default', 1);
     }
 
     public function images(): MorphMany
     {
-        return $this->morphMany(Image::class, 'imageable');
+        return $this->morphMany(Image::class, 'imageable')->where('is_default', 0);
     }
 }
