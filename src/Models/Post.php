@@ -91,6 +91,6 @@ class Post extends Model
 
     public function images(): MorphMany
     {
-        return $this->morphMany(Image::class, 'imageable')->where('is_default', 0);
+        return $this->morphMany(Image::class, 'imageable')->where('is_default', 0)->orderBy('display_order');
     }
 }
