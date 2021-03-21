@@ -46,7 +46,7 @@ class Post extends JsonResource
                 'published_at_diff_for_humans' => $this->published_at ? $this->published_at->diffForHumans() : null,
                 'reviewed_at_diff_for_humans' => $this->reviewed_at ? $this->reviewed_at->diffForHumans() : null,
                 'created_at_diff_for_humans' => $this->created_at ? $this->created_at->diffForHumans() : null,
-            ]
+            ],
         ];
     }
 }
