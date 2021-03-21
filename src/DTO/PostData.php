@@ -73,6 +73,16 @@ class PostData extends DataTransferObject
             $subCategory = Category::find($request->input('sub_category'));
         }
 
+        $uploaded_images = $request->input('images');
+        $images = [];
+        if ($uploaded_images) {
+            foreach ($uploaded_images as $index => $uploadedImage) {
+                $uploadedImage['display_order'] = $index + 1;
+                array_push($images, $uploadedImage);
+            }
+        }
+
+
         return new self([
             'title' => $request->input('title'),
             'for' => $request->input('for'),
