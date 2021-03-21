@@ -27,6 +27,8 @@ class Post extends JsonResource
             'contact_numbers' => $this->contact_numbers,
             'category' => $this->category,
             'sub_category' => $this->subCategory,
+            'default_image' => $this->defaultImage,
+            'images' => $this->images,
             'belongs_to' => $this->belongs_to,
             'posted_by' => $this->posted_by,
             'posted_at' => $this->posted_at,
