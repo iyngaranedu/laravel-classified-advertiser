@@ -101,7 +101,7 @@ class PostData extends DataTransferObject
             'contact_numbers' => $request->input('contact_numbers'),
             'sub_category' => $subCategory,
             'default_image' => $request->input('default_image'),
-            'images' => $request->input('images'),
+            'images' => $images,
             'belongs_to' => $request->input('belongs_to'),
             'posted_by' => $request->input('posted_by'),
             'posted_at' => Carbon::now(),
