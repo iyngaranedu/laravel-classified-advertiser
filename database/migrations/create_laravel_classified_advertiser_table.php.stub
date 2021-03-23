@@ -11,6 +11,7 @@ class CreateLaravelClassifiedAdvertiserTable extends Migration
         Schema::create('classified_posts', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('title');
+            $table->string('slug');
             $table->string('for', 20)->nullable(true);
             $table->tinyInteger('condition')->nullable(true);
             $table->string('short_description')->nullable(true);

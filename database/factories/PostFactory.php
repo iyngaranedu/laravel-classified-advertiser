@@ -3,6 +3,7 @@
 namespace Iyngaran\Advertiser\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 use Iyngaran\Advertiser\Models\Category;
 use Iyngaran\Advertiser\Models\Post;
 use Iyngaran\Advertiser\Tests\Models\User;
@@ -14,8 +15,10 @@ class PostFactory extends Factory
 
     public function definition(): array
     {
+        $title = ucfirst($this->faker->sentence);
         return [
             'title' => ucfirst($this->faker->sentence),
+            'slug' => Str::slug($title),
             'for' => $this->faker->randomElement([Post::FOR_RENT, Post::FOR_SALE]),
             'condition' => $this->faker->randomElement([Post::CONDITION_NEW, Post::CONDITION_USED]),
             'short_description' => $this->faker->paragraph(2),

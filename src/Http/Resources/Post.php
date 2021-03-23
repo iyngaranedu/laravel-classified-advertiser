@@ -13,6 +13,7 @@ class Post extends JsonResource
             'data' => [
                 'id' => $this->id,
                 'title' => $this->title,
+                'slug' => $this->slug,
                 'for' => $this->for,
                 'condition' => $this->condition,
                 'short_description' => $this->short_description,

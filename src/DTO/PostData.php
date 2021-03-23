@@ -5,12 +5,15 @@ namespace Iyngaran\Advertiser\DTO;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Str;
 use Iyngaran\Category\Models\Category;
 use Spatie\DataTransferObject\DataTransferObject;
 
 class PostData extends DataTransferObject
 {
     public string $title;
+
+    public string $slug;
 
     public ?string $for;
 
@@ -85,6 +88,7 @@ class PostData extends DataTransferObject
 
         return new self([
             'title' => $request->input('title'),
+            'slug' => Str::slug($request->input('title')),
             'for' => $request->input('for'),
             'condition' => (int)$request->input('condition'),
             'short_description' => $request->input('short_description'),
