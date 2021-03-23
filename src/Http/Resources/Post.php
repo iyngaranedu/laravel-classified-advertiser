@@ -34,6 +34,7 @@ class Post extends JsonResource
                 'belongs_to' => $this->belongs_to,
                 'posted_by' => $this->posted_by,
                 'posted_at' => $this->posted_at,
+                'marked_as_featured' => $this->marked_as_featured,
                 'status' => $this->status,
                 'published_by' => $this->published_by,
                 'published_at' => $this->published_at,

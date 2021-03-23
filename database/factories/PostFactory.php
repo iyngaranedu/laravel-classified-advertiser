@@ -43,6 +43,7 @@ class PostFactory extends Factory
             'belongs_to' => User::factory(),
             'posted_by' => User::factory(),
             'posted_at' => $this->faker->dateTime,
+            'marked_as_featured' => $this->faker->randomElement([0,1]),
             'status' => $this->faker->randomElement(['Drafted','Pending']),
             'review_status' => $this->faker->randomElement(['In-Progress', 'Pending'])
         ];

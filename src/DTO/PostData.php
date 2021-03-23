@@ -51,6 +51,8 @@ class PostData extends DataTransferObject
 
     public ?Carbon $posted_at;
 
+    public ?int $marked_as_featured;
+
     public string $status;
 
     public string $review_status;
@@ -99,6 +101,7 @@ class PostData extends DataTransferObject
             'category' => $category,
             'address' => $request->input('address'),
             'city' => (int)$request->input('city'),
+            'marked_as_featured' => (int)$request->input('marked_as_featured') ?: 0,
             'state' => (int)$request->input('state'),
             'country' => (int)$request->input('country'),
             'geo_location' => $request->input('geo_location'),
