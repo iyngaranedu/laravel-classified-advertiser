@@ -5,7 +5,7 @@ namespace Iyngaran\Advertiser\Search\Filters;
 
 use Illuminate\Database\Eloquent\Builder;
 
-class CategoryId implements Filter
+class Category implements Filter
 {
     public static function apply(Builder $builder, $value): Builder
     {
