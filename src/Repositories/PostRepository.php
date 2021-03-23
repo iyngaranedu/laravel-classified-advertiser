@@ -26,4 +26,13 @@ class PostRepository implements PostRepositoryInterface
 
         return (new SearchPost())->getPaginatedResults($request, $page_limit);
     }
+
+    public function findBySlug(string $slug): Post
+    {
+        if ($post = Post::where('slug', $slug)->first()) {
+            return $post;
+        }
+
+        throw new PostNotFoundException("The post does not exist");
+    }
 }

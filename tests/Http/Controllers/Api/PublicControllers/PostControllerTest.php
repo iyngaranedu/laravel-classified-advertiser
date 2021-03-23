@@ -27,7 +27,7 @@ class PostControllerTest extends TestCase
     public function a_post_can_be_retrieve()
     {
         $post = Post::factory()->create();
-        $response = $this->get('api/app/public/posts/'.$post->id);
+        $response = $this->get('api/app/public/posts/'.$post->slug);
         $response->assertStatus(200);
     }
 }

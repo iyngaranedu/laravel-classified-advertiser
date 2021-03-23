@@ -18,8 +18,8 @@ class PostController extends Controller
         return Post::collection($post->search($request));
     }
 
-    public function show(PublicPostShowRequest $request, PostRepositoryInterface $post, $id): JsonResponse
+    public function show(PublicPostShowRequest $request, PostRepositoryInterface $post, $slug): JsonResponse
     {
-        return response()->json(new Post($post->find($id)));
+        return response()->json(new Post($post->findBySlug($slug)));
     }
 }
