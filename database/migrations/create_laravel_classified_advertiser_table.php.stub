@@ -30,7 +30,7 @@ class CreateLaravelClassifiedAdvertiserTable extends Migration
             $table->unsignedBigInteger('belongs_to');
             $table->unsignedBigInteger('posted_by');
             $table->dateTime('posted_at')->useCurrent();
-            $table->tinyInteger('marked_as_featured');
+            $table->tinyInteger('marked_as_featured')->default(0);
             $table->enum('status',['Published','Drafted','Pending']);
             $table->unsignedBigInteger('published_by')->nullable(true);
             $table->dateTime('published_at')->nullable(true);
