@@ -31,7 +31,7 @@ class Post extends JsonResource
                 'sub_category' => $this->subCategory,
                 'default_image' => $this->defaultImage,
                 'images' => $this->images,
-                'belongs_to' => $this->belongs_to,
+                'belongs_to' => getUserModel()::find($this->belongs_to),
                 'posted_by' => $this->posted_by,
                 'posted_at' => $this->posted_at,
                 'marked_as_featured' => $this->marked_as_featured,
