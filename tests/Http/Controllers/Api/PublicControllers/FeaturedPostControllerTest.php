@@ -22,5 +22,4 @@ class FeaturedPostControllerTest extends TestCase
         $response = $this->get('api/app/public/featured-posts?page=2&order-by=title&order-in=ASC');
         $response->assertStatus(200);
     }
-
 }
