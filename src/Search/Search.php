@@ -17,7 +17,7 @@ class Search
     private static function applyDecoratorsFromRequest(Request $request, Builder $query): Builder
     {
         foreach ($request->all() as $filterName => $value) {
-            if (isset($value) && ! empty($value)) {
+            if (isset($value) && !empty($value)) {
                 $decorator = static::createFilterDecorator($filterName);
                 if (static::isValidDecorator($decorator)) {
                     $query = $decorator::apply($query, $value);
@@ -30,7 +30,7 @@ class Search
 
     private static function createFilterDecorator($name): string
     {
-        return __NAMESPACE__ . '\\Filters\\' . str_replace(' ', '', ucwords(str_replace(['-', '_'], ' ', $name)));
+        return __NAMESPACE__.'\\Filters\\'.str_replace(' ', '', ucwords(str_replace(['-', '_'], ' ', $name)));
     }
 
     private static function isValidDecorator($decorator): bool

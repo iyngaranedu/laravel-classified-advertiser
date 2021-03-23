@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Iyngaran\Advertiser\Http\Controllers\Api\PostController;
 use Iyngaran\Advertiser\Http\Controllers\Api\PublicControllers\PostController as PublicPostController;
 use Iyngaran\Advertiser\Http\Controllers\Api\FileUploadController;
+use Iyngaran\Advertiser\Http\Controllers\Api\PublicControllers\FeaturedPostController;
 
 Route::group(
     ['prefix' => 'public', 'as' => 'public.'],
@@ -12,6 +13,8 @@ Route::group(
             'index',
             'show'
         ]);
+
+        Route::get('/featured-posts', FeaturedPostController::class);
     });
 
 
