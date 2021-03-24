@@ -19,7 +19,8 @@
         "illuminate/contracts": "^8.0",
         "iyngaran/laravel-categories": "dev-master",
         "spatie/laravel-package-tools": "^1.1",
-        "spatie/data-transfer-object": "^2.8"
+        "spatie/data-transfer-object": "^2.8",
+        "iyngaran/laravel-locations": "dev-master"
     },
     "require-dev": {
         "orchestra/testbench": "^6.0",
@@ -32,7 +33,9 @@
             "Iyngaran\\Advertiser\\": "src",
             "Iyngaran\\Advertiser\\Database\\Factories\\": "database/factories"
         },
-        "files": ["src/Helpers/helpers.php"]
+        "files": [
+            "src/Helpers/helpers.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
@@ -59,10 +62,14 @@
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
-    "repositories": {
-        "dev-package": {
+    "repositories": [
+        {
             "type": "vcs",
             "url": "https://github.com/iyngaran/laravel-categories.git"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/iyngaran/laravel-locations.git"
         }
-    }
+    ]
 }

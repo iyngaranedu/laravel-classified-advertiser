@@ -4,6 +4,7 @@
 namespace Iyngaran\Advertiser\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
+use Iyngaran\Location\Models\Location;
 
 class Post extends JsonResource
 {
@@ -22,9 +23,9 @@ class Post extends JsonResource
                 'currency' => $this->currency,
                 'negotiable' => $this->negotiable,
                 'address' => $this->address,
-                'city' => $this->city,
-                'state' => $this->state,
-                'country' => $this->country,
+                'city' => Location::find($this->city),
+                'state' => Location::find($this->state),
+                'country' => Location::find($this->country),
                 'geo_location' => $this->geo_location,
                 'contact_numbers' => $this->contact_numbers,
                 'category' => $this->category,

@@ -39,6 +39,9 @@ class TestCase extends Orchestra
         include_once __DIR__.'/../vendor/iyngaran/laravel-categories/database/migrations/create_laravel_categories_table.php.stub';
         (new \CreateLaravelCategoriesTable())->up();
 
+        include_once __DIR__.'/../vendor/iyngaran/laravel-locations/database/migrations/create_laravel_locations_table.php.stub';
+        (new \CreateLaravelLocationsTable())->up();
+
         include_once __DIR__.'/../database/migrations/create_laravel_classified_advertiser_table.php.stub';
         (new \CreateLaravelClassifiedAdvertiserTable())->up();
 
