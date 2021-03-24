@@ -18,9 +18,9 @@
         "php": "^7.4|^8.0",
         "illuminate/contracts": "^8.0",
         "iyngaran/laravel-categories": "dev-master",
-        "spatie/laravel-package-tools": "^1.1",
+        "iyngaran/laravel-locations": "dev-master",
         "spatie/data-transfer-object": "^2.8",
-        "iyngaran/laravel-locations": "dev-master"
+        "spatie/laravel-package-tools": "^1.1"
     },
     "require-dev": {
         "orchestra/testbench": "^6.0",
@@ -61,7 +61,7 @@
         }
     },
     "minimum-stability": "dev",
-    "prefer-stable": true,
+    "prefer-stable": false,
     "repositories": [
         {
             "type": "vcs",
