@@ -17,7 +17,7 @@ class FileUploadController extends Controller
         try {
             $file = $request->file('file');
             $file_name = trim(str_replace(" ", "_", $file->getClientOriginalName()));
-            Storage::disk('public')->put($file_name, File::get($file));
+            Storage::disk(config('classified-advertiser.post_image_path'))->put($file_name, File::get($file));
         } catch (\Exception $e) {
             return response(['errors' => ['message' => $e->getMessage()]], 404);
         }

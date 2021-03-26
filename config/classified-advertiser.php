@@ -19,5 +19,6 @@ return [
         'negotiable' => 'required',
         'category' => 'required',
         'sub_category' => 'required'
-    ]
+    ],
+    'post_image_path' => 'public/images/posts'
 ];
