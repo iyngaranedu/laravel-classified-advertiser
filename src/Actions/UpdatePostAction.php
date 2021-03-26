@@ -23,6 +23,7 @@ class UpdatePostAction
             $post->subCategory()->associate($data->sub_category)->save();
         }
 
+        /*
         if ($data->default_image) {
             $post = (new AttachDefaultImageAction())->execute($post, $data->default_image);
         }
@@ -30,6 +31,7 @@ class UpdatePostAction
         if ($data->images) {
             $post = (new AttachImagesAction())->execute($post, $data->images);
         }
+        */
 
         return $post;
     }
