@@ -20,5 +20,5 @@ return [
         'category' => 'required',
         'sub_category' => 'required'
     ],
-    'post_image_path' => 'public/images/posts'
+    'post_image_path' => '/images/posts/'
 ];
