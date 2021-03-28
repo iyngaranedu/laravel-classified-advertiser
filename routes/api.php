@@ -11,8 +11,7 @@ Route::group(
     function () {
         Route::resource('/posts', PublicPostController::class)->only([
             'index',
-            'show',
-            'store'
+            'show'
         ]);
 
         Route::get('/featured-posts', FeaturedPostController::class);
