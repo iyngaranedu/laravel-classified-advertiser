@@ -3,7 +3,7 @@
 
 namespace Iyngaran\Advertiser\Http\Controllers\Api\PublicControllers;
 
-use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Routing\Controller;
 use Iyngaran\Advertiser\Http\Requests\PublicPostIndexRequest;
 use Iyngaran\Advertiser\Http\Resources\Post;
@@ -14,11 +14,11 @@ class FeaturedPostController extends Controller
     public function __invoke(
         PublicPostIndexRequest $request,
         PostRepositoryInterface $post
-    ): AnonymousResourceCollection {
+    ): JsonResponse {
         $request->merge([
             'featured' => 1,
         ]);
 
-        return Post::collection($post->search($request)->shuffle());
+        return response()->json(Post::collection($post->search($request)->shuffle()));
     }
 }

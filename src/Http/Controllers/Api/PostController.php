@@ -4,7 +4,6 @@
 namespace Iyngaran\Advertiser\Http\Controllers\Api;
 
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Illuminate\Routing\Controller;
 use Iyngaran\Advertiser\Actions\CreatePostAction;
 use Iyngaran\Advertiser\Actions\DeletePostAction;
@@ -20,9 +19,9 @@ use Iyngaran\Advertiser\Repositories\PostRepositoryInterface;
 
 class PostController extends Controller
 {
-    public function index(PostIndexRequest $request, PostRepositoryInterface $post): AnonymousResourceCollection
+    public function index(PostIndexRequest $request, PostRepositoryInterface $post): JsonResponse
     {
-        return Post::collection($post->search($request));
+        return response()->json(Post::collection($post->search($request)));
     }
 
     public function store(PostStoreRequest $request): JsonResponse
