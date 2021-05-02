@@ -13,7 +13,7 @@ use Iyngaran\Advertiser\Repositories\PostRepositoryInterface;
 
 class PostController extends Controller
 {
-    public function index(PublicPostIndexRequest $request, PostRepositoryInterface $post): AnonymousResourceCollection
+    public function index(PublicPostIndexRequest $request, PostRepositoryInterface $post): JsonResponse
     {
         return response()->json(Post::collection($post->search($request)));
     }
