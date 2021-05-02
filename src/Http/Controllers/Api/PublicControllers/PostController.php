@@ -15,7 +15,7 @@ class PostController extends Controller
 {
     public function index(PublicPostIndexRequest $request, PostRepositoryInterface $post): AnonymousResourceCollection
     {
-        return Post::collection($post->search($request));
+        return response()->json(Post::collection($post->search($request)));
     }
 
     public function show(PublicPostShowRequest $request, PostRepositoryInterface $post, $slug): JsonResponse
