@@ -39,6 +39,7 @@ class Post extends JsonResource
             'published_by' => $this->published_by,
             'published_at' => $this->published_at,
             'review_status' => $this->review_status,
+            'is_verified' => $this->review_status == 'Reviewed',
             'reviewed_by' => $this->reviewed_by,
             'reviewed_at' => $this->reviewed_at,
             'created_at' => $this->created_at,
