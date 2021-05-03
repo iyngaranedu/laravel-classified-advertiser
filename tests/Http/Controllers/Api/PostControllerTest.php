@@ -128,8 +128,8 @@ class PostControllerTest extends TestCase
                     'posted_at_diff_for_humans',
                     'published_at_diff_for_humans',
                     'reviewed_at_diff_for_humans',
-                    'created_at_diff_for_humans'
-                ]
+                    'created_at_diff_for_humans',
+                ],
             ]);
     }
 
@@ -181,7 +181,7 @@ class PostControllerTest extends TestCase
                     'posted_at_diff_for_humans',
                     'published_at_diff_for_humans',
                     'reviewed_at_diff_for_humans',
-                    'created_at_diff_for_humans'
+                    'created_at_diff_for_humans',
                 ]
             );
     }
@@ -243,7 +243,7 @@ class PostControllerTest extends TestCase
                     'posted_at_diff_for_humans',
                     'published_at_diff_for_humans',
                     'reviewed_at_diff_for_humans',
-                    'created_at_diff_for_humans'
+                    'created_at_diff_for_humans',
                 ]
             );
     }
@@ -306,7 +306,7 @@ class PostControllerTest extends TestCase
                     'posted_at_diff_for_humans',
                     'published_at_diff_for_humans',
                     'reviewed_at_diff_for_humans',
-                    'created_at_diff_for_humans'
+                    'created_at_diff_for_humans',
                 ]
             );
     }
@@ -342,7 +342,7 @@ class PostControllerTest extends TestCase
         $response->assertStatus(200)
             ->assertJson([
                 'title' => $postData['title'],
-                'review_status' => 'Reviewed'
+                'review_status' => 'Reviewed',
             ])
             ->assertJsonStructure(
                 [
@@ -382,7 +382,7 @@ class PostControllerTest extends TestCase
                     'posted_at_diff_for_humans',
                     'published_at_diff_for_humans',
                     'reviewed_at_diff_for_humans',
-                    'created_at_diff_for_humans'
+                    'created_at_diff_for_humans',
                 ]
             );
     }

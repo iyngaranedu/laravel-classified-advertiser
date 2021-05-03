@@ -24,7 +24,7 @@ class FeaturedPostControllerTest extends TestCase
             ->assertJson([
                 [
                     'marked_as_featured' => 1,
-                ]
+                ],
             ])
             ->assertJsonStructure([
                 [
@@ -64,8 +64,8 @@ class FeaturedPostControllerTest extends TestCase
                     'posted_at_diff_for_humans',
                     'published_at_diff_for_humans',
                     'reviewed_at_diff_for_humans',
-                    'created_at_diff_for_humans'
-                ]
+                    'created_at_diff_for_humans',
+                ],
             ]);
     }
 }

@@ -59,8 +59,8 @@ class PostControllerTest extends TestCase
                     'posted_at_diff_for_humans',
                     'published_at_diff_for_humans',
                     'reviewed_at_diff_for_humans',
-                    'created_at_diff_for_humans'
-                ]
+                    'created_at_diff_for_humans',
+                ],
             ]);
     }
 
@@ -112,7 +112,7 @@ class PostControllerTest extends TestCase
                     'posted_at_diff_for_humans',
                     'published_at_diff_for_humans',
                     'reviewed_at_diff_for_humans',
-                    'created_at_diff_for_humans'
+                    'created_at_diff_for_humans',
                 ]
             );
     }
