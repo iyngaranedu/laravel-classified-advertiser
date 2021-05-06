@@ -54,16 +54,17 @@ class AdvertiserCommand extends Command
             $bar->finish();
             return true;
         } catch (\Exception $exception) {
-            $this->error($exception->getMessage());
+            $this->error("\n".$exception->getMessage());
             return false;
         }
     }
 
     public function handle()
     {
+        $this->info("Started. Please wait...");
         if ($this->resizePostImages()) {
-            return $this->info('All the post images have been resized successfully!');
+            return $this->info("\n".'All the post images have been resized successfully!');
         }
-        return $this->error('Failed to resize some post images!');
+        return $this->error("\n".'Failed to resize some post images!');
     }
 }
