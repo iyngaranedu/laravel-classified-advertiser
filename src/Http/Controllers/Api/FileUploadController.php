@@ -27,7 +27,10 @@ class FileUploadController extends Controller
                         File::makeDirectory($image_path.$key);
                     }
                     Image::make($image_path.$file_name)
-                        ->crop($image_size['width'], $image_size['height'])
+                        ->resize($image_size['width'], $image_size['height'], function ($constraint) {
+                            $constraint->aspectRatio();
+                            $constraint->upsize();
+                        })
                         ->save($image_path.$key.'/'.$file_name);
                 }
             }
