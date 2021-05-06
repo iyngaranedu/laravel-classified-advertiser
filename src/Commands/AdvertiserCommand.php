@@ -14,7 +14,7 @@ class AdvertiserCommand extends Command
     {
         try{
             $image_path = storage_path('app/public'.config('classified-advertiser.post_image_path'));
-            console.log($image_path);
+            print($image_path);
             return true;
         } catch (\Exception $exception) {
             return $this->error($exception->getMessage());
