@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Facades\Image;
 
 class FileUploadController extends Controller
 {
@@ -18,6 +19,8 @@ class FileUploadController extends Controller
             $file = $request->file('file');
             $file_name = trim(str_replace(" ", "_", $file->getClientOriginalName()));
             Storage::disk('public')->put(config('classified-advertiser.post_image_path').$file_name, File::get($file));
+            $img = Image::make(config('classified-advertiser.post_image_path').$file_name, File::get($file))->resize(300, 200);
+            Storage::disk('public')->put(config('classified-advertiser.post_image_path').'resized-'.$file_name, $img);
         } catch (\Exception $e) {
             return response(['errors' => ['message' => $e->getMessage()]], 404);
         }

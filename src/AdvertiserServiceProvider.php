@@ -10,6 +10,7 @@ use Iyngaran\Advertiser\Repositories\PostRepository;
 use Iyngaran\Advertiser\Repositories\PostRepositoryInterface;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
+use Intervention\Image\ImageServiceProvider;
 
 class AdvertiserServiceProvider extends PackageServiceProvider
 {
@@ -22,6 +23,7 @@ class AdvertiserServiceProvider extends PackageServiceProvider
             ->hasMigration('create_laravel_classified_advertiser_table')
             ->hasCommand(AdvertiserCommand::class);
 
+        $this->registerServiceProviders();
         $this->registerRepositories();
         $this->registerWebRoutes();
         $this->registerApiRoutes();
@@ -56,6 +58,12 @@ class AdvertiserServiceProvider extends PackageServiceProvider
     private function registerRepositories()
     {
         $this->app->bind(PostRepositoryInterface::class, PostRepository::class);
+    }
+
+    private function registerServiceProviders()
+    {
+        $this->app->bind(ImageServiceProvider::class);
+        $this->app->alias(\Intervention\Image\Facades\Image::class, 'Image');
     }
 
     public function boot(): self

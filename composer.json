@@ -17,6 +17,7 @@
     "require": {
         "php": "^7.4|^8.0",
         "illuminate/contracts": "^8.0",
+        "intervention/image": "^2.5",
         "iyngaran/laravel-categories": "dev-master",
         "iyngaran/laravel-locations": "dev-master",
         "spatie/data-transfer-object": "^2.8",
