@@ -26,8 +26,9 @@ class FileUploadController extends Controller
                     if(!File::exists($image_path.$key)) {
                         File::makeDirectory($image_path.$key);
                     }
-                    $img = Image::make($image_path.$file_name)->resize($image_size['width'], $image_size['height']);
-                    $img->save($image_path.$key.'/'.$file_name);
+                    Image::make($image_path.$file_name)
+                        ->crop($image_size['width'], $image_size['height'])
+                        ->save($image_path.$key.'/'.$file_name);
                 }
             }
         } catch (\Exception $e) {
