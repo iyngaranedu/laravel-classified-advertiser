@@ -40,6 +40,7 @@ class Post extends Model
     protected $casts = [
         'geo_location' => Json::class,
         'contact_numbers' => Json::class,
+        'contact_emails' => Json::class,
     ];
 
     public function category(): BelongsTo
