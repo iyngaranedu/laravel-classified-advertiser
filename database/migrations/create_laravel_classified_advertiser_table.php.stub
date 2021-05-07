@@ -24,7 +24,10 @@ class CreateLaravelClassifiedAdvertiserTable extends Migration
             $table->integer('state')->nullable(true);
             $table->integer('country')->nullable(true);
             $table->json('geo_location')->nullable(true);
+            $table->string('contact_name')->nullable(true);
             $table->json('contact_numbers')->nullable(true);
+            $table->json('contact_emails')->nullable(true);
+            $table->text('contact_note')->nullable(true);
             $table->unsignedBigInteger('category_id')->nullable(true);
             $table->unsignedBigInteger('sub_category_id')->nullable(true);
             $table->unsignedBigInteger('belongs_to');

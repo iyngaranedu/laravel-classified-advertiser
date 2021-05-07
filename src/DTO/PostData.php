@@ -39,7 +39,13 @@ class PostData extends DataTransferObject
 
     public ?array $geo_location;
 
+    public ?string $contact_name;
+
     public ?array $contact_numbers;
+
+    public ?string $contact_note;
+
+    public ?array $contact_emails;
 
     public Category $category;
 
@@ -105,7 +111,10 @@ class PostData extends DataTransferObject
             'state' => (int)$request->input('state'),
             'country' => (int)$request->input('country'),
             'geo_location' => $request->input('geo_location'),
+            'contact_name' => $request->input('contact_name'),
             'contact_numbers' => $request->input('contact_numbers'),
+            'contact_emails' => $request->input('contact_emails'),
+            'contact_note' => $request->input('contact_note'),
             'sub_category' => $subCategory,
             'default_image' => $request->input('default_image'),
             'images' => $images,
