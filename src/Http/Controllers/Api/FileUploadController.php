@@ -8,6 +8,7 @@ use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
+use Carbon\Carbon;
 
 class FileUploadController extends Controller
 {
@@ -17,7 +18,8 @@ class FileUploadController extends Controller
     {
         try {
             $file = $request->file('file');
-            $file_name = trim(str_replace(" ", "_", $file->getClientOriginalName()));
+            $current_timestamp = Carbon::now()->timestamp;
+            $file_name = $current_timestamp."_".trim(str_replace(" ", "_", $file->getClientOriginalName()));
             Storage::disk('public')->put(config('classified-advertiser.post_image_path').$file_name, File::get($file));
             $image_path = storage_path('app/public'.config('classified-advertiser.post_image_path'));
             $image_sizes = config('classified-advertiser.image_sizes');
