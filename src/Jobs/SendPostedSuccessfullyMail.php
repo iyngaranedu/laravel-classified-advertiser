@@ -30,6 +30,6 @@ class SendPostedSuccessfullyMail implements ShouldQueue
 
     public function handle()
     {
-        Mail::to($this->user)->queue(new PostedSuccessfullyMail($this->post));
+        Mail::to($this->user)->queue(new PostedSuccessfullyMail($this->post, $this->user));
     }
 }
