@@ -4,6 +4,7 @@
 namespace Iyngaran\Advertiser\Actions;
 
 use Iyngaran\Advertiser\DTO\PostData;
+use Iyngaran\Advertiser\Jobs\SendPostedSuccessfullyMail;
 use Iyngaran\Advertiser\Models\Post;
 
 class CreatePostAction
@@ -15,11 +16,11 @@ class CreatePostAction
                 ->toArray()
         );
 
-        if (! empty($data->category)) {
+        if (!empty($data->category)) {
             $post->category()->associate($data->category)->save();
         }
 
-        if (! empty($data->sub_category)) {
+        if (!empty($data->sub_category)) {
             $post->subCategory()->associate($data->sub_category)->save();
         }
 
@@ -30,7 +31,7 @@ class CreatePostAction
         if ($data->images) {
             $post = (new AttachImagesAction())->execute($post, $data->images);
         }
-
+        dispatch(new SendPostedSuccessfullyMail($post, getUserModel()::find($post->belongs_to)));
         return $post;
     }
 }
