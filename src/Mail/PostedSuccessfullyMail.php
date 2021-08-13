@@ -25,7 +25,7 @@ class PostedSuccessfullyMail extends Mailable
     public function build(): self
     {
         $post_title = $this->post->title;
-        return $this->markdown('classified-advertiser.posted_successfully', [
+        return $this->markdown('emails.classified-advertiser.posted_successfully', [
             'post' => $this->post,
             'user' => $this->user,
         ])->subject("The post '$post_title' has been posted successfully");
