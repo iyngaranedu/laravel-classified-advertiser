@@ -9,14 +9,6 @@ class PostCollection extends ResourceCollection
 {
     public function toArray($request): array
     {
-        return [
-            $this->items(),
-            'pagination' => [
-                'per_page' => $this->perPage(),
-                'current_page' => $this->currentPage(),
-                'total_items' => $this->total(),
-                'last_page' => $this->lastPage(),
-            ],
-        ];
+        return parent::toArray($request);
     }
 }

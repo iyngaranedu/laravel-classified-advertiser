@@ -13,9 +13,9 @@ use Iyngaran\Advertiser\Repositories\PostRepositoryInterface;
 
 class PostController extends Controller
 {
-    public function index(PublicPostIndexRequest $request, PostRepositoryInterface $post): JsonResponse
+    public function index(PublicPostIndexRequest $request, PostRepositoryInterface $post): PostCollection
     {
-        return response()->json(new PostCollection($post->search($request)));
+        return new PostCollection($post->search($request));
     }
 
     public function show(PublicPostShowRequest $request, PostRepositoryInterface $post, $slug): JsonResponse
