@@ -10,7 +10,7 @@ class PostCollection extends ResourceCollection
     public function toArray($request): array
     {
         return [
-            'data' => $this->items(),
+            $this->items(),
             'pagination' => [
                 'per_page' => $this->perPage(),
                 'current_page' => $this->currentPage(),
