@@ -15,7 +15,7 @@ class PostController extends Controller
 {
     public function index(PublicPostIndexRequest $request, PostRepositoryInterface $post): PostCollection
     {
-        return new PostCollection($post->search($request));
+        return PostCollection($post->search($request))->collection;
     }
 
     public function show(PublicPostShowRequest $request, PostRepositoryInterface $post, $slug): JsonResponse
