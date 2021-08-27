@@ -11,6 +11,7 @@ use Iyngaran\Advertiser\Repositories\PostRepositoryInterface;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 use Intervention\Image\ImageServiceProvider;
+use Illuminate\Http\Resources\Json\Resource;
 
 class AdvertiserServiceProvider extends PackageServiceProvider
 {
@@ -69,6 +70,7 @@ class AdvertiserServiceProvider extends PackageServiceProvider
     public function boot(): self
     {
         parent::boot();
+        Resource::withoutWrapping();
         Post::observe(PostObserver::class);
 
         return $this;
